@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+body {
+  background-color: #ededf1;
+}
+.header {
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+.header .header-nav {
+  height: 6rem;
+  color: #6c757d;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
+}
+.header .header-nav a {
+  display: none;
+}
+.header .header-nav .menu {
+  display: none;
+}
+.header .header-nav input {
+  display: none;
+}
+.header .header-nav .nav-ul {
+  align-items: center;
+  font-size: 5rem;
+  list-style: none;
+  height: 100%;
+  margin: 0rem;
+}
+.header .header-nav .nav-ul .nav-ul-li {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  padding-left: 1rem;
+  transition: transform 0.5s;
+}
+.header .header-nav .nav-ul .nav-ul-li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  display: flex;
+  align-items: center;
+}
+.header .header-nav .nav-ul .nav-ul-li a img {
+  width: 4rem;
+  padding-right: 1rem;
+}
+.header .header-nav .nav-ul .nav-ul-li:nth-child(2) {
+  padding-left: 3.5rem;
+}
+.header .header-nav .nav-ul .nav-ul-li:not(.li-categorias):hover {
+  transform: translateY(-0.5rem);
+  font-size: 4rem;
+  color: #6c757d;
+}
+.header .header-nav .nav-ul .li-categorias {
+  border-right: 1px solid #6c757d;
+  height: 65%;
+  justify-content: end;
+}
+.header .header-nav .nav-ul .li-categorias a .flecha {
+  width: 1.5rem;
+  height: 1.7rem;
+  color: #dee2e6;
+  margin: 0rem 1rem 0rem 1rem;
+  padding-right: 0rem;
+}
+.header .header-nav .nav-ul .li-categorias:hover > ul {
+  display: block;
+  font-size: 4.4rem;
+  top: 5rem;
+  padding: 0rem;
+  position: absolute;
+  left: 4.1rem;
+}
+.header .header-nav .nav-ul .li-categorias ul {
+  display: none;
+  width: 20rem;
+  list-style: none;
+}
+.header .header-nav .nav-ul .li-categorias ul li {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #6c757d;
+}
+.header .header-nav .nav-ul .li-categorias ul li a {
+  display: block;
+  width: 100%;
+}
+.header .header-nav .nav-ul .li-categorias ul li:hover {
+  background-color: #4286f4;
+}
+
+p {
+  margin: 0rem;
+}
+
+
