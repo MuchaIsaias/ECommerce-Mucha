@@ -1,62 +1,61 @@
 import React from 'react'
 import CartWidget from './CartWidget.jsx'
 import { images } from './Imagenes.jsx'
-const NavBar = ({ colorFondo }) =>{
+import {NavLink,Link} from "react-router-dom"
+
+const NavBar = ({ colorFondo }) =>{ 
     return (
         <nav className="header-nav" style={{display:"flex", backgroundColor: colorFondo}}>
-            <a href="./index.html"><img src={images.Miproyecto} alt="logo-de-la-tienda"/></a>
-            <input className="checkbox" type="checkbox"/>
-            <img className="menu abrir" src="./assets/menu.png" alt=""/>
-            <img className="menu cerrar" src="./assets/x.png" alt=""/>
             <ul className="nav-ul row w-100" >
-                <li className="nav-ul-li col-xl-2 col-lg-2 col-md-12 li-categorias">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1 col-lg-1 li-categorias">
+                    <NavLink to="/">
                         <img src={images.categorias} alt=""/>
-                            Categorias
-                        <img className="flecha" src="./assets/flecha-hacia-abajo-para-navegar.png" alt="foto-de-flecha-hacia-abajo"/>
-                    </a>
-                    <ul style={{ backgroundColor: colorFondo}}>
-                        <li><a href="">Accesorios</a></li>
-                        <li><a href=".">Notebooks</a></li>
-                        <li><a href=".">PcArmadas</a></li>
-                        <li><a href=".">Hardware</a></li>
-                        <li><a href=".">Monitores</a></li>
-                        <li><a href=".">Software</a></li>
-                        <li><a href=".">Conectividad</a></li>
+                        <img className="flecha" src={images.Flecha} alt="foto-de-flecha-hacia-abajo"/>
+                    </NavLink>
+                    <ul>
+                        <li><NavLink to="/category/Accesorios">Accesorios</NavLink></li>
+                        <li><NavLink to="/category/Notebooks">Notebooks</NavLink></li>
+                        <li><NavLink to="/category/PcArmadas">PcArmadas</NavLink></li>
+                        <li><NavLink to="/category/Hardware">Hardware</NavLink></li>
+                        <li><NavLink to="/category/Monitores">Monito    res</NavLink></li>
+                        <li><NavLink to="/category/Software">Software</NavLink></li>
+                        <li><NavLink to="/category/Gamers">Gamers</NavLink></li>
                     </ul>
                 </li>
-                <li className="nav-ul-li col-xl-2 col-lg-2">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1.5 col-lg-2">
+                    <NavLink to="/">
                         <img src={images.casa} alt="logo-de-una-casa"/>
                         Inicio
-                    </a>        
+                    </NavLink>        
                 </li>
-                <li className="nav-ul-li col-xl-2 col-lg-2">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1.5 col-lg-2">
+                    <NavLink to="/Tienda">
                         <img src={images.tiendaOnline} alt="logo-de-una-tienda"/>
                         Tienda
-                    </a>
+                    </NavLink>
                 </li>
-                <li className="nav-ul-li col-xl-2 col-lg-2">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1.5 col-lg-2">
+                    <NavLink to="/Nosotros">
                         <img src={images.burbujaDeDialogo} alt="logo-de-burbuja-de-dialogo"/>
                         Nosotros
-                    </a>
+                    </NavLink>
                 </li>
-                <li className="nav-ul-li col-xl-2 col-lg-2">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1.5 col-lg-2">
+                    <NavLink to="/Ayuda">
                         <img src={images.ayudar} alt="logo-de-ayudar"/>
                         Ayuda
-                    </a>
+                    </NavLink>
                 </li>
-                <li className="nav-ul-li col-xl-2 col-lg-2">
-                    <a href="">
+                <li className="nav-ul-li col-xl-1.5 col-lg-2">
+                    <NavLink to="/Contacto">
                         <img src={images.auriculares} alt="logo-de-auriculares-con-microfono"/>
                         Contacto
-                    </a>
+                    </NavLink>
+                </li>
+                <li className="nav-ul-li col-xl-1 col-lg-2">
+                    <CartWidget/> 
                 </li>
             </ul>
-            <CartWidget/>        
         </nav>
     )
 }
