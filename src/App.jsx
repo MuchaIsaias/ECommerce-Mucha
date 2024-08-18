@@ -1,15 +1,17 @@
 import { useState,useEffect } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import NavBar from './component/NavBar.jsx'
-import Ayuda from "./component/Ayuda.jsx"
-import Nosotros from "./component/Nosotros.jsx"
-import Contacto from "./component/Contacto.jsx"
-import Tienda from "./component/Tienda.jsx"
+import Cart from "./component/pages/Cart.jsx"
+import Ayuda from "./component/pages/Ayuda.jsx"
+import Nosotros from "./component/pages/Nosotros.jsx"
+import Contacto from "./component/pages/Contacto.jsx"
+import Tienda from "./component/pages/Tienda.jsx"
 import BotonColor from "./component/BotonColor.jsx"
 import Busqueda from './component/Busqueda.jsx'
-import ItemListContainer from "./component/ItemListContainer.jsx"
-import { ItemDetailContainer } from './component/ItemDetailContainer.jsx'
-import ItemListContainerCategory from "./component/ItemListContainerCategory.jsx"
+import ItemListContainer from "./component/ItemsList/ItemListContainer.jsx"
+import { ItemDetailContainer } from './component/ItemsList/ItemDetailContainer.jsx'
+import ItemListContainerCategory from "./component/ItemsList/ItemListContainerCategory.jsx"
+import {Provider} from "./contexts/ItemsContext.jsx"
 
 function App() {
   const [isAzul, setIsAzul] = useState(false);
@@ -20,6 +22,7 @@ function App() {
   const colorNavBar = isAzul ? '#4CAF50' : '#08527A';
   
   return(
+    <Provider>
   <BrowserRouter>
         <div style={{display:"flex",flexDirection: "row",justifyContent: "space-evenly",flexWrap: "wrap",backgroundColor: "#fff",borderBottom: "1px solid #6c757d",borderTop: "1px #dee2e6 solid",alignItems: "center"}}>
           <Busqueda />
@@ -36,8 +39,10 @@ function App() {
       <Route path='/Tienda' element={<Tienda />}/>
       <Route path='/item/:id' element={<ItemDetailContainer />}/>
       <Route path='/category/:category' element={<ItemListContainerCategory />}/>
+      <Route path='/category/Cart' element={<Cart />}/>
     </Routes>
   </BrowserRouter>
+  </Provider>
   )
 };
 

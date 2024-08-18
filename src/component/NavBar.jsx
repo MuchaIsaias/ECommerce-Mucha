@@ -1,7 +1,7 @@
 import React from 'react'
-import CartWidget from './CartWidget.jsx'
+import CartWidget from './ItemsList/CartWidget.jsx'
 import { images } from './Imagenes.jsx'
-import {NavLink,Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 const NavBar = ({ colorFondo }) =>{ 
     return (
@@ -17,7 +17,7 @@ const NavBar = ({ colorFondo }) =>{
                         <li><NavLink to="/category/Notebooks">Notebooks</NavLink></li>
                         <li><NavLink to="/category/PcArmadas">PcArmadas</NavLink></li>
                         <li><NavLink to="/category/Hardware">Hardware</NavLink></li>
-                        <li><NavLink to="/category/Monitores">Monito    res</NavLink></li>
+                        <li><NavLink to="/category/Monitores">Monitores</NavLink></li>
                         <li><NavLink to="/category/Software">Software</NavLink></li>
                         <li><NavLink to="/category/Gamers">Gamers</NavLink></li>
                     </ul>
