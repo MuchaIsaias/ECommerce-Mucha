@@ -9,35 +9,29 @@ const ItemListContainerCategory = ()=>{
     const {categoryid}=useParams()
 
     useEffect(() => {
-        const db= getFirestore()
-        const refCollection=!id
-		?collection(db,"Items")
-		:query(collection(db,"Items"))
-        getDocs(refCollection).then((snapshot)=>{
-			setProductId(
-				snapshot.docs.map((doc)=>{
-					return{id:doc.id,...doc.data()}
-				})
-				)
+		const db= getFirestore()
+        const refCollection=collection(db,"Items")
+        const q = query(refCollection, where('categoryid', '==', categoryid));
+		getDocs(q).then((snapshot)=>{
+			setproduct(
+                snapshot.docs.map((doc)=>{
+                    return{id:doc.id,...doc.data()}
+                })
+                )
 		})
-        mypromise.then(response=>{
-            const items= response.filter(i=>i.category===category)
-            setproduct(items)
-            console.log(product)
-        })
 	}, [categoryid])
-    
-    if (!product) return <div>Loading...</div>
+
+    if (!product)return <div>Loading...</div>
     
     return(
         <Container className='row productos'>
         {product.map(productslista=>(
         <Card key={productslista.id} className='col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 conteiner-cards border rounded'>
-            <Card.Img src={productslista.img} className='img-productos'/>
+            <Card.Img src={productslista.image} className='img-productos'/>
             <Card.Body>
-				<Card.Title>{productslista.nombre}</Card.Title>
-				<Card.Text>{productslista.precio}</Card.Text>
-				<Card.Text>{productslista.category}</Card.Text>
+				<Card.Title>{productslista.title}</Card.Title>
+				<Card.Text>{productslista.price}</Card.Text>
+				<Card.Text>{productslista.categoryid}</Card.Text>
 				<Link to={`/item/${productslista.id}`}>
 					<Button>Ver más</Button>
 				</Link>

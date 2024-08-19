@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState} from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import NavBar from './component/NavBar.jsx'
 import Cart from "./component/pages/Cart.jsx"
@@ -38,7 +38,7 @@ function App() {
       <Route path='/Contacto' element={<Contacto />}/>
       <Route path='/Tienda' element={<Tienda />}/>
       <Route path='/item/:id' element={<ItemDetailContainer />}/>
-      <Route path='/category/:category' element={<ItemListContainerCategory />}/>
+      <Route path='/category/:categoryid' element={<ItemListContainerCategory />}/>
       <Route path='/category/Cart' element={<Cart />}/>
     </Routes>
   </BrowserRouter>

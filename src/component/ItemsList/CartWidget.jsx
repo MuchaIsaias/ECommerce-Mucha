@@ -1,5 +1,4 @@
 import cart from '../../assets/carro.png'
-
 import {NavLink} from "react-router-dom"
 import { ItemContext } from "../../contexts/ItemsContext"
 import {useContext } from "react"
