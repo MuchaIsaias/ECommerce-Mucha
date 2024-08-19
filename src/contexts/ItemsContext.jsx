@@ -11,7 +11,8 @@ export const Provider = ({children}) =>{
     const Reset=()=>{
         setItems([])
     }
-    console.log(items)
+    console.log(items.length)
+
     return(
         <ItemContext.Provider value={{ items,addItem,Reset }}>
             {children}

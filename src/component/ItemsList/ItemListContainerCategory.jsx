@@ -1,23 +1,31 @@
 import React from 'react';
 import { useState,useEffect } from 'react'
-import ProductLIst from "../../products.json"
 import {Link,useParams } from 'react-router-dom';
 import {Container,Card,Button} from 'react-bootstrap'
+import{getFirestore,collection,getDocs, query,where} from "firebase/firestore"
 
 const ItemListContainerCategory = ()=>{
     const [product, setproduct] = useState([]);
-    const {category}=useParams()
+    const {categoryid}=useParams()
 
     useEffect(() => {
-        const mypromise = new Promise((resolve,reject)=>{
-            resolve(ProductLIst)
-        })
+        const db= getFirestore()
+        const refCollection=!id
+		?collection(db,"Items")
+		:query(collection(db,"Items"))
+        getDocs(refCollection).then((snapshot)=>{
+			setProductId(
+				snapshot.docs.map((doc)=>{
+					return{id:doc.id,...doc.data()}
+				})
+				)
+		})
         mypromise.then(response=>{
             const items= response.filter(i=>i.category===category)
             setproduct(items)
             console.log(product)
         })
-	}, [category])
+	}, [categoryid])
     
     if (!product) return <div>Loading...</div>
     
