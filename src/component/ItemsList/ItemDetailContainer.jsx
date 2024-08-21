@@ -2,6 +2,7 @@ import { useState, useEffect,useContext } from "react"
 import { useParams } from "react-router-dom"
 import { ItemContext } from "../../contexts/ItemsContext"
 import{getFirestore,getDoc,doc} from "firebase/firestore"
+import { ItemsCount } from "./ItemCount"
 
 export const ItemDetailContainer = () => {
 	const [productId, setProductId] = useState(null)
@@ -18,17 +19,19 @@ export const ItemDetailContainer = () => {
 		})
 	}, [id])
 
+	const onAdd = (count)=>{
+		addItem ({...productId,quantity :count})
+	}
+
     if (!productId) return <div>Loading...</div>
 	return (
-		<main>
+		<main key={productId.id}>
 			<h1>Detalle del producto:</h1>
-			<h2>{productId.title}</h2>
+			<h2 className="a">{productId.title}</h2>
 			<img width={300} src={productId.image} alt={productId.title} />
-			<p>{productId.descripcion}</p> 
-			<p>{productId.price}</p>
-			<button type="button" onClick={()=>addItem(productId)}>
-				Carrito
-			</button>
+			<p className="a">{productId.descripcion}</p> 
+			<p className="a">{productId.price}</p>
+			<ItemsCount stock={productId.stock} onAdd={onAdd}/>
 		</main>
 	)
 }

@@ -6,12 +6,24 @@ export const Provider = ({children}) =>{
     const [items,setItems]=useState([])
     
     const addItem = (item)=>{
-        setItems((prev)=>[...prev,item])
+        const Exist= items.some((i)=>i.id===item.id)
+        if(Exist){
+            const transform = items.map((i)=>{
+                if (i.id===item.id) {
+                    return{...i,quantity: i.quantity + item.quantity}
+                }else{
+                    return i
+                }
+            })
+            setItems(transform)
+        }else{
+            setItems((prev)=>[...prev,item])
+        }
     } 
     const Reset=()=>{
         setItems([])
     }
-    console.log(items.length)
+    console.log(items)
 
     return(
         <ItemContext.Provider value={{ items,addItem,Reset }}>

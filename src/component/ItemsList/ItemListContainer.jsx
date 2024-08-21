@@ -1,11 +1,13 @@
 import React from 'react';
-import { useState,useEffect}from 'react'
+import { useState,useEffect,useContext}from 'react'
 import {Link } from 'react-router-dom';
 import {Container,Card,Button} from 'react-bootstrap'
 import{getFirestore,collection,getDocs} from "firebase/firestore"
+import { ItemContext } from "../../contexts/ItemsContext"
 
 const ItemListContainer = ()=>{
     const [product, setproduct] = useState([]);
+    const { addItem } = useContext(ItemContext)
 
 
     useEffect(()=>{
@@ -31,6 +33,9 @@ const ItemListContainer = ()=>{
 				<Link to={`/item/${productslista.id}`}>
 					<Button>Ver más</Button>
 				</Link>
+                <button type="button" onClick={()=>addItem(productslista)}>
+				Carrito
+			</button>
 			</Card.Body>
         </Card>
         ))}
