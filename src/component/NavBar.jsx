@@ -6,6 +6,11 @@ import {NavLink} from "react-router-dom"
 const NavBar = ({ colorFondo }) =>{ 
     return (
         <nav className="header-nav" style={{display:"flex", backgroundColor: colorFondo}}>
+            <a href="./index.html"><img src={images.Miproyecto} alt="logo-de-la-tienda"/></a>
+            <input className="checkbox" type="checkbox"/>
+            <img className="menu abrir" src="https://i.imgur.com/8DiG78Y.png" alt=""/>
+            <img className="menu cerrar" src="https://i.imgur.com/ASUQNrC.png" alt=""/>
+            
             <ul className="nav-ul row w-100" >
                 <li className="nav-ul-li col-xl-1 col-lg-1 li-categorias">
                     <NavLink to="/">
@@ -52,7 +57,7 @@ const NavBar = ({ colorFondo }) =>{
                         Contacto
                     </NavLink>
                 </li>
-                <li className="nav-ul-li col-xl-1 col-lg-2">
+                <li className="nav-ul-li col-xl-1 col-lg-2 ">
                     <CartWidget/> 
                 </li>
             </ul>

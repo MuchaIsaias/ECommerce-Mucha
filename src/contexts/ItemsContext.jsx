@@ -1,5 +1,6 @@
 import {createContext,useState } from "react";
 
+
 export const ItemContext = createContext()
 
 export const Provider = ({children}) =>{
@@ -26,7 +27,7 @@ export const Provider = ({children}) =>{
     console.log(items)
 
     return(
-        <ItemContext.Provider value={{ items,addItem,Reset }}>
+        <ItemContext.Provider value={{ items,addItem,Reset}}>
             {children}
         </ItemContext.Provider>
     )

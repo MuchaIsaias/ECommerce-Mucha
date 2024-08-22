@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react'
 import {Link,useParams } from 'react-router-dom';
-import {Container,Card,Button} from 'react-bootstrap'
 import{getFirestore,collection,getDocs, query,where} from "firebase/firestore"
 
 const ItemListContainerCategory = ()=>{
@@ -24,21 +23,45 @@ const ItemListContainerCategory = ()=>{
     if (!product)return <div>Loading...</div>
     
     return(
-        <Container className='row productos'>
+        <main className="main-tienda row">
+    <h2 className="col-xl-12">Todos Los Productos : </h2>
+    <section className="col-xl-3 col-lg-3 col-md-12 tienda-categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="#">Accesorios</a></li>
+        <li><a href="#">Notebooks</a></li>
+        <li><a href="#">PcArmadas</a></li>
+        <li><a href="#">Hardware</a></li>
+        <li><a href="#">Monitores</a></li>
+        <li><a href="#">Software</a></li>
+        <li><a href="#">Conectividad</a></li>
+      </ul>
+    </section>
+        <section className='todos-los-productos col-xl-9 col-lg-9 col-md-12'>
         {product.map(productslista=>(
-        <Card key={productslista.id} className='col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 conteiner-cards border rounded'>
-            <Card.Img src={productslista.image} className='img-productos'/>
-            <Card.Body>
-				<Card.Title>{productslista.title}</Card.Title>
-				<Card.Text>{productslista.price}</Card.Text>
-				<Card.Text>{productslista.categoryid}</Card.Text>
-				<Link to={`/item/${productslista.id}`}>
-					<Button>Ver más</Button>
-				</Link>
-			</Card.Body>
-        </Card>
+        <article key={productslista.id} className='border rounded  contenedor-productos'>
+            <img src={productslista.image} className='img-productos'/>
+            <div className="conteiner-cards">
+                <div>
+                    <p className="nombre-producto">{productslista.title}</p>
+                </div>
+                <p className="dis-producto"> Disponibles: {productslista.stock}</p>
+				<h3  className="precio-producto">${productslista.price}</h3>
+                <p className="dis-producto">Sin Interés 6x</p>
+                <p className="dis-producto">Efectivo -20%</p>
+				<p className="nombre-producto">{productslista.categoryid}</p>
+                <div className="conteiner-button">
+                    <Link to={`/item/${productslista.id}`}>
+                        <button type="button" className="btn btn-primary" >
+                            <img src="https://i.imgur.com/Km3Td7U.png" alt="foto-de-un-ojo"/>
+                        </button>
+				    </Link>
+                </div>
+			</div>
+        </article>
         ))}
-        </Container>
+        </section>
+        </main>
     )
 } 
 export default ItemListContainerCategory

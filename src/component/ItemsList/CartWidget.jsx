@@ -6,7 +6,7 @@ import {useContext } from "react"
 const CartWidget= ( ) =>{
     const { items} = useContext(ItemContext)
     return(
-        <div style={{display: "flex",fontSize: "2.8rem",alignItems: "center"}}>
+        <div style={{display: "flex",fontSize: "2.8rem",alignItems: "center"}} className='cart'>
             <NavLink to="/category/Cart">
                 <img style={{width:"6rem",padding:"0.5rem" }} src={cart} alt="Cart-Widget" />
                 <span>{items.length}</span>

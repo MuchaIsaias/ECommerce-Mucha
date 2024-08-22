@@ -12,6 +12,7 @@ import ItemListContainer from "./component/ItemsList/ItemListContainer.jsx"
 import { ItemDetailContainer } from './component/ItemsList/ItemDetailContainer.jsx'
 import ItemListContainerCategory from "./component/ItemsList/ItemListContainerCategory.jsx"
 import {Provider} from "./contexts/ItemsContext.jsx"
+import { Footer } from './component/pages/Footer.jsx'
 
 function App() {
   const [isAzul, setIsAzul] = useState(false);
@@ -24,13 +25,13 @@ function App() {
   return(
     <Provider>
   <BrowserRouter>
-        <div style={{display:"flex",flexDirection: "row",justifyContent: "space-evenly",flexWrap: "wrap",backgroundColor: "#fff",borderBottom: "1px solid #6c757d",borderTop: "1px #dee2e6 solid",alignItems: "center"}}>
-          <Busqueda />
-          <BotonColor cambiarcolor={cambiarColorNavBar}/>
-        </div>
-        <header className="header">
-          <NavBar colorFondo={colorNavBar}/>
-        </header>
+    <div className="body_header">
+      <Busqueda />
+      <BotonColor cambiarcolor={cambiarColorNavBar}/>
+    </div>
+    <header className="header">
+      <NavBar colorFondo={colorNavBar}/>
+    </header>
     <Routes>
       <Route path='/' element={<ItemListContainer />}/>
       <Route path='/Nosotros' element={<Nosotros />}/>
@@ -41,6 +42,7 @@ function App() {
       <Route path='/category/:categoryid' element={<ItemListContainerCategory />}/>
       <Route path='/category/Cart' element={<Cart />}/>
     </Routes>
+    <Footer />
   </BrowserRouter>
   </Provider>
   )
