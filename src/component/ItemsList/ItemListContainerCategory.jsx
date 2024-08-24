@@ -2,6 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react'
 import {Link,useParams } from 'react-router-dom';
 import{getFirestore,collection,getDocs, query,where} from "firebase/firestore"
+import {NavLink} from "react-router-dom"
 
 const ItemListContainerCategory = ()=>{
     const [product, setproduct] = useState([]);
@@ -28,13 +29,13 @@ const ItemListContainerCategory = ()=>{
     <section className="col-xl-3 col-lg-3 col-md-12 tienda-categorias">
       <h3>Categorias</h3>
       <ul>
-        <li><a href="#">Accesorios</a></li>
-        <li><a href="#">Notebooks</a></li>
-        <li><a href="#">PcArmadas</a></li>
-        <li><a href="#">Hardware</a></li>
-        <li><a href="#">Monitores</a></li>
-        <li><a href="#">Software</a></li>
-        <li><a href="#">Conectividad</a></li>
+      <li><NavLink to="/category/Accesorios">Accesorios</NavLink></li>
+        <li><NavLink to="/category/Notebooks">Notebooks</NavLink></li>
+        <li><NavLink to="/category/PcArmadas">PcArmadas</NavLink></li>
+        <li><NavLink to="/category/Hardware">Hardware</NavLink></li>
+        <li><NavLink to="/category/Monitores">Monitores</NavLink></li>
+        <li><NavLink to="/category/Software">Software</NavLink></li>
+        <li><NavLink to="/category/Gamers">Gamers</NavLink></li>
       </ul>
     </section>
         <section className='todos-los-productos col-xl-9 col-lg-9 col-md-12'>

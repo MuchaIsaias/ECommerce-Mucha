@@ -21,6 +21,9 @@ const ItemListContainer = ()=>{
                     )
             })
         },[])
+        const onAdd = (count)=>{
+		addItem ({...count,quantity :1})
+	}
     return(
         <Container className='productos row todos-los-productos'>
         {product.map(productslista=>(
@@ -36,7 +39,7 @@ const ItemListContainer = ()=>{
                         <img src="https://i.imgur.com/Km3Td7U.png" alt="foto-de-un-ojo"/>
                         </button>
 				    </Link>
-                    <button type="button" onClick={()=>addItem(productslista)} className="btn btn-primary cambios btn-agregar-carrito">
+                    <button type="button" onClick={()=>onAdd(productslista)} className="btn btn-primary cambios btn-agregar-carrito">
 				        <img src="https://i.imgur.com/lwe0RDI.png" alt="foto-de-una-imagen-de-carritos-de-compras"/>
 			        </button>
                 </div>

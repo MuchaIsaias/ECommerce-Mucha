@@ -9,8 +9,8 @@ Proyecto Final para el curso de ReactJS de Coderhouse. La aplicación permite co
 </div>
 
 ## Sobre mi
-- 🧑 Mi Nombre es Isaias Mucha
-- ⭐ Tengo 25 años. Programo desde hace 3 años.
+- 🧑 Mi Nombre es Isaias Luis David Mucha
+- ⭐ Tengo 25 años. Programo desde hace 2 años.
 - 📲 Me especializo en Frontend.
 - 🎥 Este es mi Proyecto Final de React Js de Coderhouse.
 - ✏️ Soy de Argetina
@@ -28,8 +28,8 @@ Proyecto Final para el curso de ReactJS de Coderhouse. La aplicación permite co
 
 ## Tecnologias Usadas.
 
-- [Html] -
-- [Css] - 
+- [Html] - Lenguaje de Marcado de Hipertexto
+- [Css] - Lenguaje de Ceado de Estilos 
 - [JavaScript] - Leguaje de Progamacio
 - [Reacjs] (https://reactjs.org/) - Framework de Javascript
 - [Boostrap] (https://getbootstrap.com/) - Libreria de React
