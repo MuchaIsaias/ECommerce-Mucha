@@ -19,10 +19,28 @@ Proyecto Final para el curso de ReactJS de Coderhouse. La aplicación permite co
 
 ## Como correr esta aplicacion.
 
-- Esta aplicación está creada con Create React App.
-- Clonarla: git clone https://github.com/MuchaIsaias/ECommerce-Mucha
-- Para iniciarla, luego de clonar, ejecute npm i para instalar dependencias y luego npm start para arrancar el servidor de desarrollo.
-- Observar el archivo src/App.js.
+instalación 🔧
+Para descargar el proyecto pueden descargar el repositorio en formato zip_
+
+1 - Ir a "Code" -> "Dowload Zip"
+
+2 - Descomprimir el archivo
+
+3 - En la carpeta donde se encuentra en "package.json" ejecutar en una terminal:
+(npm install)
+
+4 - Una vez finalizado, ejecutar:
+(npm run start)
+
+Se abre una pestaña del navegador en el puerto 3000:
+
+Sino copiar esta URL y pegarla en el navegador: http://localhost:3000
+
+Instalación con git clone 🔧
+
+Se puede clonar el repositorio, ingresando a una terminal y ejecutando:https://github.com/MuchaIsaias/ECommerce-Mucha
+
+Luego continuar con el paso 3 de la otra forma
 
 <br>
 
