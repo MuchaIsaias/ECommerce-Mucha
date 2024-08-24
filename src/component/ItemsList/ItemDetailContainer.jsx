@@ -27,11 +27,15 @@ export const ItemDetailContainer = () => {
 	return (
 		<main key={productId.id}>
 			<h1>Detalle del producto:</h1>
-			<h2 className="a">{productId.title}</h2>
-			<img width={300} src={productId.image} alt={productId.title} />
-			<p className="a">{productId.descripcion}</p> 
-			<p className="a">{productId.price}</p>
-			<ItemsCount stock={productId.stock} onAdd={onAdd}/>
+			<div style={{display:"flex", alignItems:"center"}}>
+				<img width={300} src={productId.image} alt={productId.title} />
+				<div>
+					<h2 className="a">{productId.title}</h2>
+					<p className="a">{productId.descripcion}</p> 
+					<p className="a">{productId.price}</p>
+					<ItemsCount stock={productId.stock} onAdd={onAdd}/>
+				</div>
+			</div>
 		</main>
 	)
 }

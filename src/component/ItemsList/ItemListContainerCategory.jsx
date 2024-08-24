@@ -27,9 +27,9 @@ const ItemListContainerCategory = ()=>{
         <main className="main-tienda row">
     <h2 className="col-xl-12">Todos Los Productos : </h2>
     <section className="col-xl-3 col-lg-3 col-md-12 tienda-categorias">
-      <h3>Categorias</h3>
-      <ul>
-      <li><NavLink to="/category/Accesorios">Accesorios</NavLink></li>
+    <h3>Categorias</h3>
+    <ul>
+        <li><NavLink to="/category/Accesorios">Accesorios</NavLink></li>
         <li><NavLink to="/category/Notebooks">Notebooks</NavLink></li>
         <li><NavLink to="/category/PcArmadas">PcArmadas</NavLink></li>
         <li><NavLink to="/category/Hardware">Hardware</NavLink></li>
